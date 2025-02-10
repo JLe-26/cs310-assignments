@@ -1,0 +1,38 @@
+1. On line 18, the nubmer of branches reported by Jacoco is 4, but 
+it is a single if-statement. Why are there 4 branches instead of 2?
+Hint: Jacoco works at the bytecode level.
+ANS: At the bytecode level, an if-else statement is evaluated as two conditional jumps. Jacoco first
+checks if the condition is true or false, resulting in the first branch. The second branch is where the if-block
+is checked. If the condition is true, the execution will enter this block. The third branch is where
+the code inside the else-block is evaluated if the condition is false. The fourth branch represents the point
+after the if-else statement, where code is executed once the condition is evaluated.
+
+2. What percent path coverage does our test suite currently achieve?
+What about edge coverage?
+ANS: Our test suite currently achieves 92% path coverage and 83% edge coverage.
+
+3. What tests would we need to add to achieve 100% path coverage?
+ANS: We would need to add a test for the non-member case, where the membership discount is not executed.
+
+4. How many paths does a program have? What is the relationship between
+ the number of paths in a program and the number of branches?
+ANS: The number of paths a program can have is connected to the number of branches in a program. Since a path
+is a combination of decisions and branches throughout a program, the number of branches in a program 
+can increase the number of combinations of control flow, resulting in exponential growth of paths. The number
+of branches in a path can be expressed as 2^n, n being the number of branches.
+
+5. How would the CFG of a program with a loop look? What about a the CFG
+ for a program with recursion? Does your path calculation from the previous
+  question still hold?
+ANS: The CFG of a program with a loop (such as a simple if-else statement) would have a start node,
+the condition node, and then two branches for true and false. If the condition evaluates as true, there can be
+an edge that points back to the condition. If the condition is false, the program exits. For a recursive CFG,
+there would be a start node, a node for the base case, and two branches for true and false. When the base case
+evaluates as false, the program is called recursively. If true, the program returns. The number of paths 
+for a recursive CFG depends on the depth of recursion. For CFGs with loops, the number of paths is still
+calculated based on branching (such as if-else), but loops introduce cycles where the program revisits code.
+
+6. How are statements grouped to form nodes in the CFG? (hint: lookup basic blocks)
+ANS: Basic blocks are lines or instructions of code that form a linear sequence, aka when there are no
+jumps in or out of a block. Execution of a basic block flows from beginning to end without any branches,
+so statements are grouped as long as the flow of control is uninterrupted. 

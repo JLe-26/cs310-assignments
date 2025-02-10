@@ -28,4 +28,31 @@ public class TestBuyTicket {
 
         assertEquals(basePrice - expectedDiscount, price, 0.0); 
     }
+
+    @Test
+    public void testSeniorCitizen() {
+        int basePrice = 150;
+        int daysUntilEvent = 0;
+        int customerAge = 70;
+        boolean isMember = true;
+
+        double price = BuyTicket.calculatePrice(basePrice, daysUntilEvent, customerAge, isMember);
+        double expectedDiscount = basePrice * .20; // .20 discount for membership and for senior citizen
+
+        assertEquals(basePrice - expectedDiscount, price, 0.0);
+    }
+
+    @Test
+    public void testUnderEighteen() {
+        int basePrice = 150;
+        int daysUntilEvent = 0;
+        int customerAge = 17;
+        boolean isMember = true;
+
+        double price = BuyTicket.calculatePrice(basePrice, daysUntilEvent, customerAge, isMember); 
+        double expectedDiscount = basePrice * .08; //.10 discount for membership, -0.02 discount for minor
+
+        assertEquals(basePrice - expectedDiscount, price, 0.0); 
+
+    }
 }
