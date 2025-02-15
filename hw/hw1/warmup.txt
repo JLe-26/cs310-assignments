@@ -1,0 +1,23 @@
+/ Method multiplyByTwo
+public int multiplyByTwo(int a);
+   0: iload_1
+   1: iconst_2
+   2: imul
+   3: ireturn
+
+// Method square
+public int square(int b);
+   0: iload_1
+   1: iload_1
+   2: imul
+   3: ireturn
+
+// Method getMax
+public int getMax(int x, int y);
+   0: iload_1
+   1: iload_2
+   2: if_icmple 9
+   5: iload_1
+   6: goto      10
+   9: iload_2
+   10: ireturn
