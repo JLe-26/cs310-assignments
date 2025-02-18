@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "test"
+    ],
+    "java.project.referencedLibraries": [
+        "/Users/jennyle/cs383/labs/lab3/lib/pitest-junit5-plugin-1.2.1.jar",
+        "/Users/jennyle/cs383/labs/lab3/lib/hamcrest-core-1.3.jar",
+        "/Users/jennyle/cs383/labs/lab3/lib/pitest-entry-1.18.0.jar",
+        "/Users/jennyle/cs383/labs/lab3/lib/pitest-command-line-1.18.0.jar",
+        "/Users/jennyle/cs383/labs/lab3/lib/junit-4.13.2.jar",
+        "/Users/jennyle/cs383/labs/lab3/lib/pitest-1.18.0.jar"
+    ]
+}
